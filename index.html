@@ -9,6 +9,8 @@
         .odd{
   background: green;
   border-style:solid;
+  height:40px;
+  width:50%;
 }
 
 .even{
@@ -34,6 +36,7 @@ input{
 
 <body>
     <h3>SAAS Incoming 9th grader Math Skill Inventory</h3>
+    <h4>Correct: <span id="numCorrect">0</span></h4>
     <h4>Level 1: Pre Algebra</h4>
     <div class="odd">
         Evaluate: \(5-3(x-1)\) when x = 7
@@ -70,12 +73,13 @@ input{
     let questions = [];
     questions.push(makeQ("2^3", "8", 1));
     questions.push(makeQ("\\sqrt{16}", "4", 1));
-    console.log(questions);
+    questions.push(makeQ("\\dfrac{1}{2}", ".5", 1));
+    // console.log(questions);
 
 
     function makeTest(e) {
         for (let i = 0; i < questions.length; i++) {
-            console.log(questions[i]);
+            //console.log(questions[i]);
             theQuestion = '<div class="odd">';
             theQuestion += '\\(';
             theQuestion += questions[i].q;
